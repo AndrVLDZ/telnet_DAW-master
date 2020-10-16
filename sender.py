@@ -1,5 +1,3 @@
-# this script runs on the android phone
-# using QPython3L or Python on Termux
 import telnetlib
 
 def print_logo(logo=''):
@@ -22,10 +20,10 @@ def print_logo(logo=''):
 
 print_logo()
 
-port = int(input('\nTELL ME THE FUCKING PORT:'))
-ip_1 = str(input('Node_1 IP: '))
-ip_2 = str(input('Node_2 IP: '))
+port = int(input('\n PORT:'))
+ip_1 = str(input(' Host_1 IP: '))
 node_1 = telnetlib.Telnet(ip_1, port)
+ip_2 = str(input(' Host_2 IP: '))
 node_2 = telnetlib.Telnet(ip_2, port)
 
 while True:
