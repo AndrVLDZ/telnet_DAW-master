@@ -22,12 +22,14 @@ def print_logo(logo=''):
 
 print_logo()
 
-port = int(input('\nTELL ME THE FUCKING PORT:'))
-ip_1 = str(input('Node_1 IP: '))
-ip_2 = str(input('Node_2 IP: '))
+port = int(input('\n PORT:'))
+# add ip number and cycle 
+ip_1 = str(input(' Node_1 IP: '))
 node_1 = telnetlib.Telnet(ip_1, port)
+# add if error
+ip_2 = str(input(' Node_2 IP: '))
 node_2 = telnetlib.Telnet(ip_2, port)
-
+# add if error
 while True:
     symbol = str(input('==> '))
     if symbol == 's':
