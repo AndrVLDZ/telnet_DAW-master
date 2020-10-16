@@ -1,8 +1,6 @@
 # pyinstaller -F -i 'C:\Users\vldnd\Desktop\EXE\D.ico' server.py
 import socket
 #import threading
-#from typing import *
-#import telnetlib
 import subprocess
 import keyboard
 
@@ -34,8 +32,6 @@ connections = []
 ip = socket.gethostbyname(socket.getfqdn())
 print('Host IP: ' + str(ip))
 
-#ip_2 = str(input('Another host IP: '))
-#telnet = telnetlib.Telnet(ip_2, port)
 
 def handle_event_msg(data):
     
@@ -74,14 +70,8 @@ while True:
     # new socket representing the connection
     conn: socket.socket
     # address of the client
-    # (if IP-socket `new_addr` is a pair -> (hostaddr, port))
-    
     conn, addr = sock.accept()  # Accept new connection
     handler(conn, addr)
-#    cThread = threading.Thread(target=handler, args=(conn, addr))
-#    cThread.daemon = True
-#    cThread.start()
-
     connections.append(conn)
     print(connections)
     print()
