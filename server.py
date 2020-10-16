@@ -1,6 +1,6 @@
-# pyinstaller -F -i 'C:\Users\vldnd\Desktop\EXE\D.ico' server.py
+# pyinstaller -F -i 'C:\Users\vldnd\Desktop\EXE\D.ico' server.py    
+
 import socket
-#import threading
 import subprocess
 import keyboard
 
@@ -31,7 +31,6 @@ sock.listen(1)
 connections = []
 ip = socket.gethostbyname(socket.getfqdn())
 print('Host IP: ' + str(ip))
-
 
 def handle_event_msg(data):
     
@@ -69,7 +68,6 @@ def handler(current_conn: socket.socket, addr):
 while True:
     # new socket representing the connection
     conn: socket.socket
-    # address of the client
     conn, addr = sock.accept()  # Accept new connection
     handler(conn, addr)
     connections.append(conn)
