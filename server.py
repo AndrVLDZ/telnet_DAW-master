@@ -3,6 +3,9 @@
 import socket
 import subprocess
 import keyboard
+#import pyautogui
+import autoit
+import time
 
 def print_logo(logo=''):
     LOGO_DAFAULT = """
@@ -46,6 +49,67 @@ def handle_event_msg(data):
         subprocess.Popen(['C:\Program Files\PreSonus\Studio One 4\\Studio One.exe'])
         keyboard.send('shift + n')
         print("\nKeypress event 'Goto Next Мarker'")
+
+
+        
+    elif str(data, "utf-8") == "c100\r\n":
+#        subprocess.Popen(['C:\Games\Cyberpunk 2077\bin\x64\\Cyberpunk2077.exe'])
+        print("\nMouse 1000 clicks")
+        clickCounter = 0
+        while clickCounter < 100:
+            clickCounter += 1
+            autoit.mouse_down("left")
+            time.sleep(0.1)
+            autoit.mouse_up("left")
+            time.sleep(0.05)
+
+    elif str(data, "utf-8") == "c500\r\n":
+#        subprocess.Popen(['C:\Games\Cyberpunk 2077\bin\x64\\Cyberpunk2077.exe'])
+        print("\nMouse 1000 clicks")
+        clickCounter = 0
+        while clickCounter < 500:
+            clickCounter += 1
+            autoit.mouse_down("left")
+            time.sleep(0.1)
+            autoit.mouse_up("left")
+            time.sleep(0.05)
+
+    elif str(data, "utf-8") == "c1000\r\n":
+#        subprocess.Popen(['C:\Games\Cyberpunk 2077\bin\x64\\Cyberpunk2077.exe'])
+        print("\nMouse 1000 clicks")
+        clickCounter = 0
+        while clickCounter < 1000:
+            clickCounter += 1
+            autoit.mouse_down("left")
+            time.sleep(0.1)
+            autoit.mouse_up("left")
+            time.sleep(0.05)
+
+
+    elif str(data, "utf-8") == "c5000\r\n":
+#        subprocess.Popen(['C:\Games\Cyberpunk 2077\bin\x64\\Cyberpunk2077.exe'])
+        print("\nMouse 5000 clicks")
+        clickCounter = 0
+        while clickCounter < 5000:
+            clickCounter += 1
+            autoit.mouse_down("left")
+            time.sleep(0.1)
+            autoit.mouse_up("left")
+            time.sleep(0.05)
+
+    elif str(data, "utf-8") == "c10000\r\n":
+#        subprocess.Popen(['C:\Games\Cyberpunk 2077\bin\x64\\Cyberpunk2077.exe'])
+        print("\nMouse 10000 clicks")
+        clickCounter = 0
+        while clickCounter < 10000:
+            clickCounter += 1
+            autoit.mouse_down("left")
+            time.sleep(0.1)
+            autoit.mouse_up("left")
+            time.sleep(0.05)
+        
+            
+
     else:
         print("\nJust a msg")
         print(str(data, "utf-8"))
